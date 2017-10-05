@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.widget.TextView;
 
-import com.riven.lee.rivennews.MainActivity;
+import com.riven.lee.rivennews.ui.main.MainActivity;
 import com.riven.lee.rivennews.R;
 import com.riven.lee.rivennews.base.SimpleActivity;
 import com.riven.lee.rivennews.widget.CirclePageIndicator;

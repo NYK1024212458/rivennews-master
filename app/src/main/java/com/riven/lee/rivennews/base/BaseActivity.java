@@ -4,10 +4,6 @@ package com.riven.lee.rivennews.base;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-
-import com.riven.lee.rivennews.app.APP;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -34,22 +30,22 @@ public abstract class BaseActivity<T extends BasePresenter> extends SupportActiv
         if(mPresenter != null){
             mPresenter.attachView(this);
         }
-        APP.getInstance().addActivity(this);
+//        APP.getInstance().addActivity(this);
         initEventAndData();
     }
 
-    protected void setToolBar(Toolbar toolbar, String title){
-        toolbar.setTitle(title);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);   //添加返回按钮
-        getSupportActionBar().setDisplayShowHomeEnabled(true);   //是否显示左上角的图标
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-    }
+//    protected void setToolBar(Toolbar toolbar, String title){
+//        toolbar.setTitle(title);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);   //添加返回按钮
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);   //是否显示左上角的图标
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onBackPressed();
+//            }
+//        });
+//    }
 
     @Override
     protected void onDestroy() {
@@ -58,7 +54,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends SupportActiv
             mPresenter.detachView();
         }
         mUnBinder.unbind();
-        APP.getInstance().removeActivity(this);
+//        APP.getInstance().removeActivity(this);
     }
 
     protected abstract int getLayout();
