@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -50,6 +51,8 @@ public class APP extends Application{
 
             @Override
             public void onActivityStarted(final Activity activity) {
+                Log.d("onActivityStarted",activity.getTitle()+"");
+
                 //这里全局给Activity设置toolbar和title
                 if(activity.findViewById(R.id.ll_toolbar)!=null){
                     if(activity instanceof AppCompatActivity){
@@ -104,6 +107,7 @@ public class APP extends Application{
 
             @Override
             public void onActivityDestroyed(Activity activity) {
+                Log.d("onActivityDestroyed",activity.getTitle()+"");
                 if (allActivities != null) {
                     allActivities.remove(activity);
                 }

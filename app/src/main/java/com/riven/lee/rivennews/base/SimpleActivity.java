@@ -6,8 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.riven.lee.rivennews.app.APP;
-
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportActivity;
@@ -29,7 +27,6 @@ public abstract class SimpleActivity extends SupportActivity {
         setContentView(getLayout());
         mContext = this;
         mUnBinder = ButterKnife.bind(this);
-        APP.getInstance().addActivity(this);
         initEventAndData();
     }
 
@@ -50,7 +47,6 @@ public abstract class SimpleActivity extends SupportActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        APP.getInstance().removeActivity(this);
         mUnBinder.unbind();
     }
 

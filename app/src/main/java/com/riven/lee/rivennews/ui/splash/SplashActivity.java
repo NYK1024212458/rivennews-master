@@ -7,9 +7,9 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.widget.TextView;
 
-import com.riven.lee.rivennews.ui.main.MainActivity;
 import com.riven.lee.rivennews.R;
 import com.riven.lee.rivennews.base.SimpleActivity;
+import com.riven.lee.rivennews.ui.main.MainActivity;
 import com.riven.lee.rivennews.widget.CirclePageIndicator;
 import com.riven.lee.rivennews.widget.ExtendedViewPager;
 
@@ -48,12 +48,11 @@ public class SplashActivity extends SimpleActivity implements ViewPager.OnPageCh
     }
 
 
-
-    @OnClick(R.id.tv_enter)
-    public void onViewClicked() {
-        startActivity(new Intent(SplashActivity.this, MainActivity.class));
-        finish();
-    }
+//    @OnClick(R.id.tv_enter)
+//    public void onViewClicked() {
+//        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+//        finish();
+//    }
 
     public void next(int position) {
         int i = this.vpVideo.getCurrentItem();
@@ -79,6 +78,14 @@ public class SplashActivity extends SimpleActivity implements ViewPager.OnPageCh
 
     }
 
+
+
+    @OnClick(R.id.tv_enter)
+    public void onClick() {
+        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+        finish();
+    }
+
     class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
         private final int[] videoRes; //视频资源
@@ -93,7 +100,7 @@ public class SplashActivity extends SimpleActivity implements ViewPager.OnPageCh
         @Override
         public Fragment getItem(int position) {
             if (position < getCount()) {
-                return VideoItemFragment.newInstance(position,videoRes[position],imgRes[position]);
+                return VideoItemFragment.newInstance(position, videoRes[position], imgRes[position]);
             }
             throw new RuntimeException("Position out of range. Adapter has " + getCount() + " items");
         }
