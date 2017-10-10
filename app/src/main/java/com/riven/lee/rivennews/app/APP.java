@@ -61,7 +61,7 @@ public class APP extends Application{
                     }
                 } else {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        activity.setActionBar((android.widget.Toolbar) activity.findViewById(R.id.toolbar));
+                        activity.setActionBar((android.widget.Toolbar) activity.findViewById(R.id.ll_toolbar));
                         activity.getActionBar().setDisplayShowTitleEnabled(false);
                     }
                 }

@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.riven.lee.rivennews.ui.splash.SplashActivity">
 
+    <include layout="@layout/view_toolbar" />
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
